@@ -18,7 +18,13 @@ Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous 
 2. Installez les dépendances :
    ```bash
    pip install -r requirements.txt
-   ```
+   django-admin startproject scientific_search
+   cd scientific_search
+   python manage.py startapp search
+   python manage.py makemigrations
+   python manage.py migrate
+
+
 
 3. Exécutez le serveur :
    ```bash
