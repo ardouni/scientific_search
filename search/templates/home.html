@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Barre en haut */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            width: 100%;
+            padding: 10px; /* Réduit le padding pour rendre la barre plus courte */
+            text-align: center;
+            font-size: 1.5em; /* Réduit la taille de la police */
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* Conteneur Home */
+        .home-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            margin-top: 80px; /* Ajuste le contenu sous la barre */
+        }
+
+        h4 {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .btn-danger {
+            margin-top: 10px;
+        }
+
+        .links-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .links-list a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .links-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barre en haut -->
+<header>
+    Scientific Search Engine
+</header>
+
+<!-- Conteneur Home -->
+<div class="home-container">
+    <h4>Welcome, {{ user.username }}!</h4>
+    <p>You are successfully logged in.</p>
+    
+    <!-- Button to go to the search page -->
+    <a href="{% url 'search' %}" class="btn btn-primary">Go to Search</a>
+    
+    <!-- Button to log out -->
+    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+
+    <!-- Links to scientific resources -->
+    <div class="links-list">
+        <h4>Useful Resources:</h4>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a>
+        <a href="https://ieeexplore.ieee.org/" target="_blank">IEEE Xplore</a>
+        <a href="https://www.sciencedirect.com/" target="_blank">ScienceDirect</a>
+        <a href="https://arxiv.org/" target="_blank">arXiv</a>
+        <a href="https://www.springer.com/" target="_blank">Springer</a>
+        <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Scientific Search Engine | Powered by Django</p>
+</footer>
+
+</body>
+</html>
